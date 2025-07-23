@@ -1,0 +1,177 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme Variables */
+:root {
+  --light-bg: #f9f9fb;
+  --light-text: #222;
+  --dark-bg: #1c1c1c;
+  --dark-text: #f1f1f1;
+  --accent: #6c63ff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --light-bg: #1c1c1c;
+  --light-text: #f1f1f1;
+  --card-bg: #292929;
+  --shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.theme-toggle {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.stopwatch-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.time-display {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.controls .btn {
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-start {
+  background: #28a745;
+  color: white;
+}
+
+.btn-lap {
+  background: #ffc107;
+  color: #222;
+}
+
+.btn-reset {
+  background: #dc3545;
+  color: white;
+}
+
+/* Grid layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Lap List */
+.lap-section {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.lap-time {
+  font-weight: bold;
+}
+
+.no-data {
+  text-align: center;
+  color: #888;
+}
+
+/* Chart Section */
+.chart-section {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.chart-container {
+  height: 200px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-display {
+    font-size: 3rem;
+  }
+}
