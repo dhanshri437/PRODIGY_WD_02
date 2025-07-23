@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>⏱ Smart Stopwatch</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+  </header>
+
+  <main class="container">
+    <section class="stopwatch-section">
+      <div class="time-display" id="timeDisplay">00:00:00</div>
+      <div class="controls">
+        <button class="btn btn-start" id="startBtn" onclick="startStop()">Start</button>
+        <button class="btn btn-lap" id="lapBtn" onclick="recordLap()" disabled>Lap</button>
+        <button class="btn btn-reset" onclick="reset()">Reset</button>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section class="lap-section">
+        <h2 class="section-title">Laps</h2>
+        <div class="lap-list" id="lapList">
+          <div class="no-data">No laps recorded yet</div>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <h2 class="section-title">Lap Chart</h2>
+        <div class="chart-container">
+          <canvas id="lapChart"></canvas>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value" id="bestLap">--:--:--</div>
+            <div class="stat-label">Best Lap</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="avgLap">--:--:--</div>
+            <div class="stat-label">Average Lap</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="totalLaps">0</div>
+            <div class="stat-label">Total Laps</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
